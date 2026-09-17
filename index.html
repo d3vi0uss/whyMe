@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="theme-color" content="#0b0d13">
+<meta name="description" content="Ghostlight — an offline case-opening &amp; skin collecting game. Open cases, build an inventory, trade up, and climb the ranks.">
+<title>Ghostlight</title>
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <header id="header" class="app-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">◈</span>
+      <span class="brand-name">GHOSTLIGHT</span>
+    </div>
+
+    <div class="hdr-stats">
+      <button type="button" class="rank-chip" data-action="go" data-tab="profile" aria-label="Open profile">
+        <span id="rankBadge" class="rank-badge"></span>
+        <span class="rank-text">
+          <span id="rankName" class="rank-name">Drifter</span>
+          <span id="levelText" class="level-text">Lv 1</span>
+        </span>
+      </button>
+      <div class="xp-track" aria-hidden="true"><div id="xpFill" class="xp-fill"></div></div>
+      <div class="money-chip">
+        <span class="money-icon" aria-hidden="true">$</span>
+        <span id="moneyText">0</span>
+      </div>
+      <button type="button" class="icon-btn" id="soundToggle" data-action="toggleSound" aria-label="Toggle sound">🔊</button>
+    </div>
+  </header>
+
+  <main id="screen" class="screen" tabindex="-1"></main>
+
+  <nav id="nav" class="bottom-nav" aria-label="Main">
+    <button type="button" class="nav-btn" data-action="go" data-tab="cases"><span class="nav-ic" aria-hidden="true">▣</span><span>Cases</span></button>
+    <button type="button" class="nav-btn" data-action="go" data-tab="inventory"><span class="nav-ic" aria-hidden="true">▤</span><span>Inventory</span></button>
+    <button type="button" class="nav-btn" data-action="go" data-tab="upgrades"><span class="nav-ic" aria-hidden="true">▲</span><span>Upgrades</span></button>
+    <button type="button" class="nav-btn" data-action="go" data-tab="missions"><span class="nav-ic" aria-hidden="true">◆</span><span>Missions</span></button>
+    <button type="button" class="nav-btn" data-action="go" data-tab="casino"><span class="nav-ic" aria-hidden="true">◉</span><span>Casino</span></button>
+    <button type="button" class="nav-btn" data-action="go" data-tab="profile"><span class="nav-ic" aria-hidden="true">☰</span><span>Profile</span></button>
+  </nav>
+
+</div>
+
+<div id="modalRoot" class="modal-root" aria-live="polite"></div>
+<div id="toastRegion" class="toast-region" aria-live="polite"></div>
+
+<noscript>Ghostlight needs JavaScript enabled to run.</noscript>
+
+<script src="utils.js"></script>
+<script src="data.js"></script>
+<script src="svg.js"></script>
+<script src="audio.js"></script>
+<script src="state.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
